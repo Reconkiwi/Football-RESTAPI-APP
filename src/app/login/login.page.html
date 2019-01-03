@@ -1,0 +1,23 @@
+
+<ion-content padding class="login_page">
+  <ion-img width="50" height="50" src="assets/logo.png"></ion-img>
+  <div class="alert alert-danger" role="alert" *ngIf="error_message">{{error_message}}</div>
+  <form [formGroup]="login_form" (ngSubmit)="login(login_form.value)">
+    <ion-item>
+      <ion-label color="primary">Username</ion-label>
+      <ion-input type="text" formControlName="username" placeholder="Enter username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Password</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Enter password" required></ion-input>
+    </ion-item>
+    <ion-button expand="full"  type="submit" class="login_button">Login</ion-button>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="btn-wrapper">
+    <ion-button href="/home">Continue as a Guest</ion-button>
+  </div>
+  </ion-toolbar>
+</ion-footer>

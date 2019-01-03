@@ -1,0 +1,24 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-header>
+  <ion-toolbar>
+    <img class="title-image" src="assets/logo.png" width="43" height="43" href="/home" slot="end">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><h1 [innerHTML]="item.title.rendered"></h1></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-img *ngIf="item._embedded['wp:featuredmedia']" [src]="item._embedded['wp:featuredmedia'][0].source_url"></ion-img>
+
+  <div [innerHTML]="item.content.rendered"></div>
+
+</ion-content>
